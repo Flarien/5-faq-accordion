@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light_pink: hsl(275, 100%, 97%);
+  --grayish_purple: hsl(292, 16%, 49%);
+  --purple: #a22cda;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--light_pink);
+}
+
+header {
+  height: 320px;
+  background-image: url(./assets/images/background-pattern-desktop.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+section {
+  margin-top: -160px;
+  z-index: 99;
+  width: 600px;
+  height: 565px;
+  border-radius: 15px;
+  background-color: var(--white);
+  padding: 42px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.star-icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-image: url("./assets/images/icon-star.svg");
+  background-size: cover;
+  margin-right: 15px;
+}
+
+h1 {
+  font-size: 55px;
+  font-weight: 700;
+}
+
+input {
+  display: none;
+}
+
+.questions_container {
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.question:hover {
+  color: var(--purple);
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-block;
+  background-image: url(./assets/images/icon-plus.svg);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+input:checked + .question .icon {
+  background-image: url(./assets/images/icon-minus.svg);
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--grayish_purple);
+  line-height: 1.5;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+input:checked ~ .answer {
+  max-height: 100px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 230px;
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+  }
+
+  section {
+    width: 330px;
+    height: 530px;
+    padding: 25px;
+  }
+
+  .star-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .question {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .questions_container {
+    margin-bottom: 10px;
+  }
+}
